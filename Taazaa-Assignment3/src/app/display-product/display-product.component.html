@@ -1,0 +1,53 @@
+
+<br>
+<br>
+<br>
+<h4 class = "text-center info"> Display Products </h4>
+<br>
+<br>
+<br>
+
+
+<div class = "row">
+    <div class="col-md-12">
+    <table class = "table">
+        <thead>
+            <tr>
+                <th>
+                    ProductID
+                </th>
+                <th>
+                    ProductName
+                </th>
+                <th>
+                    Manufacturer
+                </th>
+                <th>
+                    SourceCode
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    SellingPrice
+                </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let p of products">
+                <td>{{p.ProductID}}</td>
+                <td>{{p.ProductName}}</td>
+                <td>{{p.Manufacturer}}</td>
+                <td>{{p.ShortCode}}</td>
+                <td>{{p.Description}}</td>
+                <td>{{p.SellingPrice}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="col-md-2"></div>
+
+</div>
+       

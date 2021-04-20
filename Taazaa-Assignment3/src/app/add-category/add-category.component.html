@@ -1,0 +1,92 @@
+
+<br>
+<br>
+<br>
+<h2 class = "text-center  "> Add Category </h2>
+<br>
+<br>
+<br>
+
+
+
+<input type="number" placeholder="Enter Id" [(ngModel)]="x" />
+<button  class="btn btn-dark " (click) = "delete()">Delete</button>
+<br>
+<br>
+
+<div class="container">
+
+    
+    <div class="row">
+        
+        <div class="col-md-6">
+            <form [formGroup]="productForm" class="form">
+                <h6 class=" text-warning">P_Id</h6>
+                <input type="number" class="form-control" placeholder="Enter Id" formControlName= "Category_ID">
+
+                <h6 class=" text-warning">P_Name</h6>
+                <input type="text" class="form-control" placeholder="Enter Name" formControlName= "Category_Name">
+
+                <h6 class=" text-warning">P_ShortCode</h6>
+                <input type="text" class="form-control" placeholder="Enter Short code length>4" formControlName= "CategoryShortCode">
+
+                <h6 class=" text-warning">P_Description</h6>
+                <input type="text" class="form-control" placeholder="Enter Manufacturer" formControlName= "CategoryDescription">
+
+              
+                <br/>
+                <div class="row">
+                    <div class="col-md-4">
+                <button type="submit" [disabled] = 'productForm.invalid' class="btn btn-dark btn-block" (click) = "add()" >ADD</button>
+                </div>
+                <div class="col-md-4">
+                <button type="reset" class="btn btn-danger btn-block" (click) = "clear()">CLEAR</button>
+                </div>
+                <div class="col-md-4">
+                     </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <h2 class = "text-center border border-info"> Display Category </h2>
+
+    <div class="row">
+        <div class="col-md-6">
+           
+
+          <br/>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Category_ID</th>
+                        <th>Category_Name</th>
+                        <th>CategoryShortCode</th>
+                        <th>CategoryDescription</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let p of product">
+                        <td>{{p.Category_ID}}</td>
+                        <td>{{p.Category_Name}}</td>
+                        <td>{{p.CategoryShortCode}}</td>
+                        <td>{{p.CategoryDescription}}</td>
+                        
+
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+

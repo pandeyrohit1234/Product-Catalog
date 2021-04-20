@@ -1,0 +1,55 @@
+
+<br>
+<br>
+<br>
+<h4 class = "text-center info"> Search Category</h4>
+<br>
+<div class="row">
+    <div class="col-md-3">
+<h6 class="text-dark">By Id :</h6>
+<input type="text" [(ngModel)] = "searchId" placeholder="Enter ID for search" >
+    </div>
+<br>
+<br>
+<div class="col-md-3">
+<h6 class="text-dark">By Name :</h6>
+<input type="text" [(ngModel)] = "searchName" placeholder="Enter Name for search" >
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class = "row">
+    <div class="col-md-12">
+    <table class = "table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    SourceCode
+                </th>
+                <th>
+                    Description
+                </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let c of categories  | searchbyid : searchId | searchbyname : searchName">
+                <td>{{c.Category_ID}}</td>
+                <td>{{c.Category_Name}}</td>
+                <td>{{c.CategoryShortCode}}</td>
+                <td>{{c.CategoryDescription}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="col-md-2"></div>
+
+</div>

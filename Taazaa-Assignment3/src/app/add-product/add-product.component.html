@@ -1,0 +1,100 @@
+
+<br>
+<br>
+<br>
+<h2 class = "text-center border border-info"> Add Product </h2>
+<br>
+<br>
+<br>
+
+<input type="number" placeholder="Enter Id" [(ngModel)]="x" />
+<button  class="btn btn-dark " (click) = "delete()">Delete</button>
+<br>
+<br>
+
+<div class="container">
+
+    
+    <div class="row">
+        
+        <div class="col-md-6">
+            <form [formGroup]="productForm" class="form">
+                <h6 class=" text-warning">P_Id</h6>
+                <input type="number" class="form-control" placeholder="Enter Id" formControlName= "ProductID">
+
+                <h6 class=" text-warning">P_Name</h6>
+                <input type="text" class="form-control" placeholder="Enter Name" formControlName= "ProductName">
+
+                <h6 class=" text-warning">P_ShortCode</h6>
+                <input type="text" class="form-control" placeholder="Enter Short code length>4" formControlName= "ShortCode">
+
+                <h6 class=" text-warning">P_Manufacturer</h6>
+                <input type="text" class="form-control" placeholder="Enter Manufacturer" formControlName= "Manufacturer">
+
+                <h6 class=" text-warning">P_Price</h6>
+                <input type="number" class="form-control" placeholder="Enter price greater than 10" formControlName= "SellingPrice">
+                
+                <h6 class=" text-warning">P_Description</h6>
+                <input type="text" class="form-control" placeholder="Enter  Description" formControlName= "Description">
+
+                <br/>
+                <div class="row">
+                    <div class="col-md-4">
+                <button type="submit" [disabled] = 'productForm.invalid' class="btn btn-dark btn-block" (click) = "add()" >ADD</button>
+                </div>
+                <div class="col-md-4">
+                <button type="reset" class="btn btn-danger btn-block" (click) = "clear()">CLEAR</button>
+                </div>
+
+                <div class="col-md-4">
+                     <!-- <button  class="btn btn-dark btn-block" (click) = "delete()">Delete</button>
+                    <br/>
+                    <input class="form-control" placeholder="enter id to delete" formControlName= "deleteid"/>  -->
+                </div>
+
+                <div class="col-md-4">
+
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <h2 class = "text-center border border-info"> Display Product </h2>
+
+    <div class="row">
+        <div class="col-md-6">
+           
+          <br/>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>P_Id</th>
+                        <th>P_Name</th>
+                        <th>P_ShortCode</th>
+                        <th>P_Manufacturer</th>
+                        <th>P_SellingPrice</th>
+                        <th>p_Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let p of product">
+                        <td>{{p.ProductId}}</td>
+                        <td>{{p.ProductName}}</td>
+                        <td>{{p.ShortCode}}</td>
+                        <td>{{p.Manufacturer}}</td>
+                        <td>{{p.SellingPrice}}</td>
+                        <td>{{p.Description}}</td>
+
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+

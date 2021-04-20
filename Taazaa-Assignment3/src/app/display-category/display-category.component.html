@@ -1,0 +1,45 @@
+
+<br>
+<br>
+<br>
+<h4 class = "text-center info"> Display Category</h4>
+<br>
+<br>
+<br>
+
+<div class = "row">
+    
+    <div class="col-md-12">
+    <table class = "table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    SourceCode
+                </th>
+                <th>
+                    Description
+                </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let c of categories">
+                <td>{{c.Category_ID}}</td>
+                <td>{{c.Category_Name}}</td>
+                <td>{{c.CategoryShortCode}}</td>
+                <td>{{c.CategoryDescription}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="col-md-2"></div>
+
+</div>
+       
